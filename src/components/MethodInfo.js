@@ -10,7 +10,7 @@ export const MethodInfo = ({beers}) => {
     
     return (
         <>
-            <Card>
+            <Card style={{ width: "18rem" }}>
 				<Card.Header>
 					<Card.Title>
 						Method

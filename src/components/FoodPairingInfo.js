@@ -1,10 +1,13 @@
 import React from "react";
 import { Card , ListGroupItem} from "react-bootstrap";
+import uniqid from 'uniqid'
+// const uniqid = require("uniqid");
 
 export const FoodPairingInfo = ({beers}) => {
+
 	return (
 		<>
-			<Card> 
+			<Card style={{ width: "18rem" }}> 
 				<Card.Header>
 					<Card.Title>
 						Food Pairing
@@ -13,7 +16,7 @@ export const FoodPairingInfo = ({beers}) => {
 					<Card.Body>
 						{beers.food_pairing
 							? beers.food_pairing.map((items) => (
-									<ListGroupItem key={items}>{items}</ListGroupItem>
+									<ListGroupItem key={uniqid()}>{items}</ListGroupItem>
 							  ))
 							: "Coming soon..."}
 					</Card.Body>
