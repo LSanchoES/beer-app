@@ -24,7 +24,21 @@ export const IngredientsInfo = ({ ingredients }) => {
 		
 	}, [ingredients.hops !== undefined] )
 	
+	//Getting Malt Array
 
+	const [maltArray, setMaltArray] = useState([]);
+	
+	
+	const getMaltArray = ( ) => {
+		ingredients.malt !== undefined ?
+		setMaltArray(ingredients.malt)
+		: console.log('Loading malt array')
+	}
+	useEffect(  () => {
+		
+		getMaltArray()
+		
+	}, [ingredients.malt !== undefined] )
 
 	return (
 		<>
@@ -38,7 +52,8 @@ export const IngredientsInfo = ({ ingredients }) => {
 					<Card.Body>
 
 						<Card.Text>
-							<b>Yeast</b>: {ingredients.yeast}
+							<Card.Title>Yeast</Card.Title>
+							 {ingredients.yeast}
 						</Card.Text>
 
 							<Card.Title> <b>Hops</b></Card.Title>
@@ -57,8 +72,27 @@ export const IngredientsInfo = ({ ingredients }) => {
                         	}
 
 						</ListGroup>
+
+							<Card.Title> <b>Malt</b></Card.Title>
+							<ListGroup>	
+							{
+                        	maltArray !== undefined
+                        	?
+                        	maltArray.map( item =>
+
+										<ListGroupItem key={ uniqid() }>
+											{item.name}: {item.amount.value} {item.amount.unit}
+										</ListGroupItem>
+								  ) 
+							:
+                        	    "Cooking..."
+                        	}
+
+						</ListGroup>
 					</Card.Body>
 			</Card>
+
+
 		</>
 	);
 };

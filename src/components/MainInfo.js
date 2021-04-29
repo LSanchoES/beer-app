@@ -3,7 +3,7 @@ import { Card, ListGroup, ListGroupItem } from 'react-bootstrap'
 
 export const MainInfo = ({beers}) => {
 
-  
+//   console.log(beers)
     return (
         <>
 		<h2>Main Info</h2>

@@ -3,6 +3,7 @@ import { apiResp } from "./api/apiResp";
 import { FoodPairingInfo } from "./components/FoodPairingInfo";
 import { IngredientsInfo } from "./components/IngredientsInfo";
 import { MainInfo } from "./components/MainInfo";
+import { MethodInfo } from "./components/MethodInfo";
 
 // const uniqid = require("uniqid");
 
@@ -35,12 +36,28 @@ export const RandomBeer = () => {
 	}
 	useEffect(  () => {
 
-		getIngredientsArray()
+		getIngredientsArray();
 
-	}, [ingredientsFlag] )
+	}, [ingredientsFlag] );
+
+	// METHOD INFO
 
 	
+	const [methodArray, setMethodArray] = useState([]);
+	const methodFlag = beers.method !== undefined;
 
+	const getMethodArray = ( ) => {
+		beers.method!== undefined ?
+		setMethodArray(beers.method)
+		: console.log('Loading data...')
+	}
+	useEffect(  () => {
+
+		getMethodArray();
+
+	}, [methodFlag] );
+
+	
 	return (
 		<>
 			<h1>Random Beer</h1>
@@ -50,6 +67,8 @@ export const RandomBeer = () => {
 			<FoodPairingInfo beers={beers} />
 			<hr/>
 			<IngredientsInfo ingredients={ingredientsArray} />
+			<hr/>
+			<MethodInfo method={methodArray} />
 
 		</>
 	);
