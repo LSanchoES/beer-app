@@ -1,7 +1,6 @@
 import React from "react";
 import { Card , ListGroupItem} from "react-bootstrap";
 import uniqid from 'uniqid'
-// const uniqid = require("uniqid");
 
 export const FoodPairingInfo = ({beers}) => {
 

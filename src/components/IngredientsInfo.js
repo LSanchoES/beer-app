@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
-const uniqid = require("uniqid");
+import uniqid from 'uniqid';
 
 export const IngredientsInfo = ({ ingredients }) => {
 

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Card , ListGroup, ListGroupItem} from 'react-bootstrap';
-const uniqid = require("uniqid");
+import uniqid from 'uniqid';
 
 export const MethodInfo = ({method}) => {
-
+	
 	//twist (null sometimes)
 	//fermentation => [temp => unit, value]
 	//mash_temp => duration , [temp => unit, value]
@@ -15,7 +15,7 @@ export const MethodInfo = ({method}) => {
 	
 	const getFermentationArray = ( ) => {
 		method.fermentation !== undefined ?
-		setFermentationArray(method.fermentation)
+		setFermentationArray(method.fermentation.temp)
 		: console.log('Loading fermentation array')
 	};
 
@@ -25,7 +25,9 @@ export const MethodInfo = ({method}) => {
 		
 	}, [method.fermentation !== undefined] );
 	
-	console.log(fermentationArray);
+	
+
+
 
 	//Getting Mash Temp Array
 	
@@ -43,7 +45,6 @@ export const MethodInfo = ({method}) => {
 		
 	}, [method.mash_temp !== undefined] )
 
-
     return (
         <>
             <Card style={{ width: "18rem" }}>
@@ -56,15 +57,14 @@ export const MethodInfo = ({method}) => {
 				<Card.Body>
 						<Card.Title>Fermentation</Card.Title>
 					<Card.Text>
-						<Card.Title>Temp</Card.Title>
 						<ListGroup>
 							{
                 	        fermentationArray !== undefined
                 	        ?
-                	        fermentationArray.map( item =>
+                	        [fermentationArray].map( item =>
 
 										<ListGroupItem key={ uniqid() }>
-											{item.temp.value} {item.temp.unit}
+										At	{item.value} degrees {item.unit}
 										</ListGroupItem>
 								  ) 
 							:
@@ -72,9 +72,44 @@ export const MethodInfo = ({method}) => {
                 	        }
 						</ListGroup>
 					</Card.Text>		
+				</Card.Body>´
+
+				<Card.Body>
+						<Card.Title>Mash Temp</Card.Title>
+					<Card.Text>
+						<ListGroup>
+							{
+                	        mash_tempArray !== undefined
+                	        ?
+							
+                	        mash_tempArray.map( item =>
+
+										<ListGroupItem key={ uniqid() }>
+										At	{item.temp.value} degrees {item.temp.unit} during {item.duration} mins
+										</ListGroupItem>
+								  ) 
+							:
+                	            "Fermenting..."
+                	        }
+						</ListGroup>
+						
+					</Card.Text>		
 				</Card.Body>
 
+				<Card.Body>
 
+					<Card.Title>Twist</Card.Title>
+							
+							{
+							method.twist !== null
+							?
+							<ListGroupItem>{method.twist}</ListGroupItem>
+							:
+							<ListGroupItem>Nothing special... just twist with love!💖</ListGroupItem>
+							
+							}
+							
+				</Card.Body>
 			</Card>
         </>
     )

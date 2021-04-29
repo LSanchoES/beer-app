@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { apiResp } from "./api/apiResp";
 import { FoodPairingInfo } from "./components/FoodPairingInfo";
+import { Foot } from "./components/Foot";
+import { Head } from "./components/Head";
 import { IngredientsInfo } from "./components/IngredientsInfo";
 import { MainInfo } from "./components/MainInfo";
 import { MethodInfo } from "./components/MethodInfo";
 
-// const uniqid = require("uniqid");
+// import uniqid from 'uniqid';
 
 export const RandomBeer = () => {
 
@@ -60,15 +62,21 @@ export const RandomBeer = () => {
 	
 	return (
 		<>
-			<h1>Random Beer</h1>
+			<Head />
+
+			<div className="random__bar">
+				<button className=" btn random__button pointer">I want more beer!</button>
+			</div>
 
 			<MainInfo beers={beers} />
-			<hr/>
+			
 			<FoodPairingInfo beers={beers} />
-			<hr/>
+			
 			<IngredientsInfo ingredients={ingredientsArray} />
-			<hr/>
+			
 			<MethodInfo method={methodArray} />
+
+			<Foot />	
 
 		</>
 	);
