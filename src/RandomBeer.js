@@ -7,9 +7,12 @@ import { IngredientsInfo } from "./components/IngredientsInfo";
 import { MainInfo } from "./components/MainInfo";
 import { MethodInfo } from "./components/MethodInfo";
 
+
 // import uniqid from 'uniqid';
 
 export const RandomBeer = () => {
+	//Animation Scroll
+	
 
 	//Api petition COMPLETE INFO
 	const apiUrl = "https://api.punkapi.com/v2/beers/random";
@@ -64,8 +67,12 @@ export const RandomBeer = () => {
 		<>
 			<Head />
 
-			<div className="random__bar">
-				<button className=" btn random__button pointer">I want more beer!</button>
+			<div 
+			className="random__bar" 
+			>
+				<button className=" btn random__button pointer"
+				
+				>I want another beer!</button>
 			</div>
 
 			<MainInfo beers={beers} />

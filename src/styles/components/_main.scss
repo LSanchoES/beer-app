@@ -1,0 +1,46 @@
+.main__container{
+
+    height: 80vh;
+    background-color: $primary;
+    box-shadow: 0px 3px 20px  $secondary;
+    color: $white;
+    overflow: hidden;
+   
+}
+.main__image{
+    height: 30rem;
+    padding: 1rem;
+    -webkit-filter: drop-shadow(5px 5px 1px $dark-grey);
+    filter:         drop-shadow(5px 5px 10px $dark-grey); 
+    overflow-y: hidden;
+}
+.main__desc{
+    margin-top: 1rem;
+
+}
+.main__title{
+    text-shadow: 1px 1px 2px $dark-grey;
+}
+
+
+.main__text{
+    
+    text-shadow: 1px 1px 2px $dark-grey;
+    margin-top: 2rem;
+    outline: 1px solid #000;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.main__tagline{
+ 
+}
+
+.main__tip{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
+
+  
+}
+.main__date{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
+  
+}
