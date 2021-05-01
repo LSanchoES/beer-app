@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Container } from "react-bootstrap";
 import { apiResp } from "./api/apiResp";
 import { FoodPairingInfo } from "./components/FoodPairingInfo";
 import { Foot } from "./components/Foot";
@@ -13,15 +14,18 @@ import { MethodInfo } from "./components/MethodInfo";
 export const RandomBeer = () => {
 	//Animation Scroll
 	
-
+	
 	//Api petition COMPLETE INFO
-	const apiUrl = "https://api.punkapi.com/v2/beers/random";
-
+	
+	const [apiUrl, setApiUrl] = useState("https://api.punkapi.com/v2/beers/random")
+	
 	const [beers, setBeers] = useState([]);
+	
+	const [counter, setCounter] = useState(0); //HandleRepeatClick
 
 	useEffect(() => {
 		getData();
-	}, []);
+	}, [counter]);
 
 	const getData = async () => {
 		const resp = await apiResp.get(apiUrl);
@@ -29,7 +33,7 @@ export const RandomBeer = () => {
 	};
 
 	// INGREDIENTS INFO
-
+	
 	
 	const [ingredientsArray, setIngredientsArray] = useState([]);
 	const ingredientsFlag = beers.ingredients !== undefined;
@@ -62,16 +66,32 @@ export const RandomBeer = () => {
 
 	}, [methodFlag] );
 
-	
+	//Repeat Call Button
+
+	const [disableButton, setDisableButton] = useState(false);
+
+	const handleRepeatCall = () =>{
+
+		counter === 0 ?
+		setCounter(1) :
+		setCounter(0)
+		setDisableButton(true)
+		setTimeout(() => {
+			setDisableButton(false)	
+		}, 3000);
+	}
 	return (
-		<>
+		<>	
+			
+			<Container>
 			<Head />
 
 			<div 
 			className="random__bar" 
 			>
 				<button className=" btn random__button pointer"
-				
+						onClick={handleRepeatCall}
+						disabled={disableButton}
 				>I want another beer!</button>
 			</div>
 
@@ -84,7 +104,8 @@ export const RandomBeer = () => {
 			<MethodInfo method={methodArray} />
 
 			<Foot />	
-
+			
+			</Container>
 		</>
 	);
 };

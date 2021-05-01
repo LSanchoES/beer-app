@@ -8,35 +8,40 @@ export const MainInfo = ({ beers }) => {
 
 
 
-	console.log(beers)
+	// console.log(beers)
 	return (
 		<>
 		
 			<Row className="main__container">
-				<Col xs={4}>
+
+				<Col className="main__image-container" xs={4}>
 					{
 						beers.image_url !== null
 							?
 							<img
 								src={beers.image_url}
-								className="main__image"
 								alt={beers.name}
+								className="main__image"
 							/>
 
 							:
-							<img className="main__image" src="https://freesvg.org/img/jimmiet_A_nice_cold_one.png" />
+							<img  
+							src="https://freesvg.org/img/jimmiet_A_nice_cold_one.png"
+							alt="No_image"
+							/>
 
 					}
 				</Col>
 
-				<Col xs={2} className=" main__desc">
+				<Col xs={4} className=" main__desc">
 
 					<h1 className="main__title">{beers.name}</h1>
 					<p classname="main__text">{beers.description}</p>
 
-				</Col>
+				</Col >
 
-				<Col xs={2}>
+				<Col xs={4} className="main__misc">
+
 				<div className=" main__tagline">
 					<p><i>"{beers.tagline}"</i></p>
 				</div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import { Row, Col} from "react-bootstrap";
 import uniqid from 'uniqid';
 
 export const IngredientsInfo = ({ ingredients }) => {
@@ -42,57 +42,56 @@ export const IngredientsInfo = ({ ingredients }) => {
 
 	return (
 		<>
-			<Card style={{ width: "18rem" }}>
-				<Card.Header>
-					<Card.Title>
-						Ingredients
-					</Card.Title>
-				</Card.Header>
+			<Row className="ingredients__container">
 
-					<Card.Body>
+				<img src="https://res.cloudinary.com/lsancho-es/image/upload/v1619884257/wkom7ziyyxdjhczvfbzo.png" 
+					className="ingredients__image-container"
+				/>
 
-						<Card.Text>
-							<Card.Title>Yeast</Card.Title>
-							 {ingredients.yeast}
-						</Card.Text>
+				<Col className="ingredients__misc">
+					<h1 className="ingredients__title">Yeast</h1>
+					<p className="ingredients__list"><i>"{ingredients.yeast}"</i></p>
+				</Col>	
 
-							<Card.Title> <b>Hops</b></Card.Title>
-							<ListGroup>	
-							{
-                        	hopsArray !== undefined
-                        	?
-                        	hopsArray.map( item =>
+				<Col  className="ingredients__misc">
+					<h1 className="ingredients__title">Hops</h1>
+							
+						{
+                        hopsArray !== undefined
+                        ?
+                        hopsArray.map( item =>
+									<p 
+									key={uniqid()}
+									className="ingredients__list"
+									>
+										At {item.add} add {item.amount.value} {item.amount.unit} of {item.name} ( {item.attribute} )
+									</p>
+							  ) 
+						:
+                            "Cooking..."
+                        }
+						
+				</Col>
+						
+				<Col  className="ingredients__misc">
+					<h1 className="ingredients__title">Malt</h1>
+				
+					{
+					maltArray !== undefined
+					?
+					maltArray.map( item =>
 
-										<ListGroupItem key={ uniqid() }>
-											At {item.add} add {item.amount.value} {item.amount.unit} of {item.name} ( {item.attribute} )
-										</ListGroupItem>
-								  ) 
-							:
-                        	    "Cooking..."
-                        	}
-
-						</ListGroup>
-
-							<Card.Title> <b>Malt</b></Card.Title>
-							<ListGroup>	
-							{
-                        	maltArray !== undefined
-                        	?
-                        	maltArray.map( item =>
-
-										<ListGroupItem key={ uniqid() }>
-											{item.name}: {item.amount.value} {item.amount.unit}
-										</ListGroupItem>
-								  ) 
-							:
-                        	    "Cooking..."
-                        	}
-
-						</ListGroup>
-					</Card.Body>
-			</Card>
-
-
+								<p key={ uniqid() }
+									className="ingredients__list"
+								>
+									{item.name}: {item.amount.value} {item.amount.unit}
+								</p>
+							) 
+					:
+						"Cooking..."
+					}
+				</Col>
+			</Row>
 		</>
 	);
 };

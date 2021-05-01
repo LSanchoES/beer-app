@@ -5,13 +5,13 @@
     align-items: center;
     width: 99vw;
     height: 20vh;
-    background-color: black;
-    border-top: 3px solid $light-grey;
+    background-color: $light-grey;
+    border-top: 1px solid $light-grey;
     border-left: 4px solid $light-grey;
     border-right: 5px solid $light-grey;
     border-bottom: 3px solid darken($color: $light-grey, $amount: 10) ;
     box-shadow: 0px 3px 20px  $primary;
-    filter: blur(0.1px);
+    filter: blur(0.2px);
     border-radius: 0px 0px 10px 10px;
     margin-left: auto;
     margin-right: auto;
@@ -21,19 +21,24 @@
 .random__button{
 
     padding: 2rem;
-    border: 2px solid $primary-low;
+    border: 3px solid $dark-grey;
     border-radius: 25px;
     background-color: transparent;
-    color: lighten($color: $primary, $amount: 10) ;
+    color: $dark-grey;
     font-weight: bold;
     font-size: 2rem;
-    text-shadow: 1px 1px 1px $primary-low;
     transition: all 0.3s;
 
     
     &:hover{
-        border: 2px solid $primary;
-        box-shadow: 0px 0px 10px $primary ;
+
+        box-shadow: 0px 0px 10px $dark-grey inset ;
     }
+
+    &:disabled{
+
+        background-color: gray;
+    }
+
 
 }
