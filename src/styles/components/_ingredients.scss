@@ -3,7 +3,11 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-image: url("https://res.cloudinary.com/lsancho-es/image/upload/v1619884257/wkom7ziyyxdjhczvfbzo.png");
     background-color: $light-grey;
+    background-repeat: no-repeat;
+    background-size: 30%;
+    background-position: left bottom;
     box-shadow: 0px 3px 20px  $primary-low;
     color: $dark-grey;
     overflow: hidden;
@@ -14,25 +18,10 @@
 
 .ingredients__title{
     
-    border: transparent;
-    box-shadow: -2px -2px 20px  $light-grey inset;
-    border-radius: 5rem;
     font-size: 4rem;
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
     z-index: 2;
-}
-
-.ingredients__image-container{
-    position: absolute;
-    border: 2px solid red;
-    height: 100vh;
-    width: 100vw;
-    -webkit-filter: drop-shadow(5px 5px 20px $dark-grey);
-    filter:         drop-shadow(5px 5px 20px $dark-grey); 
-    overflow-y: hidden;
-    z-index: 1;
-    
 }
 
 
@@ -46,7 +35,7 @@
 }
 .ingredients__list{
     margin-top: 1rem;
-    font-size: 1rem;
+    font-size: 1.6rem;
     z-index: 2;
     &:nth-child(2){
         margin-top: 4rem;

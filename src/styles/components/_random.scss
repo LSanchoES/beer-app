@@ -15,6 +15,7 @@
     border-radius: 0px 0px 10px 10px;
     margin-left: auto;
     margin-right: auto;
+    overflow: hidden;
 
 }
 
@@ -39,6 +40,10 @@
 
         background-color: gray;
     }
-
-
 }
+@media(max-width:500px){
+    .random__button{
+      font-size: 1rem;
+      padding: 1rem;
+    }
+  }

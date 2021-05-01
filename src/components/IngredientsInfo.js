@@ -44,9 +44,6 @@ export const IngredientsInfo = ({ ingredients }) => {
 		<>
 			<Row className="ingredients__container">
 
-				<img src="https://res.cloudinary.com/lsancho-es/image/upload/v1619884257/wkom7ziyyxdjhczvfbzo.png" 
-					className="ingredients__image-container"
-				/>
 
 				<Col className="ingredients__misc">
 					<h1 className="ingredients__title">Yeast</h1>
@@ -64,7 +61,7 @@ export const IngredientsInfo = ({ ingredients }) => {
 									key={uniqid()}
 									className="ingredients__list"
 									>
-										At {item.add} add {item.amount.value} {item.amount.unit} of {item.name} ( {item.attribute} )
+										At {item.add} add {item.amount.value} {item.amount.unit} of {item.name}  {item.attribute} 
 									</p>
 							  ) 
 						:

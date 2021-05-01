@@ -78,12 +78,12 @@ export const RandomBeer = () => {
 		setDisableButton(true)
 		setTimeout(() => {
 			setDisableButton(false)	
-		}, 3000);
+		}, 1000);
 	}
 	return (
 		<>	
 			
-			<Container>
+			<Container className="animate__animated animate__fadeIn">
 			<Head />
 
 			<div 

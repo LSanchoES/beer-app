@@ -37,14 +37,10 @@
 }
 .main__title{
    
-    margin-top: 6rem;
     text-shadow: 1px 1px 2px $dark-grey;
     margin-top: 1rem;
-
-    -webkit-filter: drop-shadow(2px 1px 1px $primary-low);
-    filter:         drop-shadow(2px 1px 1px $primary-low);
-    text-overflow: ellipsis;
-    overflow: hidden;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 
@@ -54,7 +50,7 @@
     align-items: center;
     text-shadow: 1px 1px 1px $dark-grey;
     text-align: center;
-    font-size: 75%;
+    font-size: 1rem;
     text-overflow: ellipsis;
     overflow: hidden;
 
@@ -66,25 +62,21 @@
     text-align: center;
     height: 70vh;
     overflow: hidden;
+    font-size: 1rem;
 
 }
 .main__tagline{
 
     margin-top: 10rem;
-
-        
-    -webkit-filter: drop-shadow(5px 5px 20px $primary-low);
-    filter:         drop-shadow(5px 5px 20px $primary-low); 
+    font-size: 2rem;
 }
 
 .main__tip{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
     margin-top: 3rem;
 
 }
 .main__date{
     height: 70vh;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
     margin-top: 3rem;
   
 }
