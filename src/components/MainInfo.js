@@ -12,7 +12,7 @@ export const MainInfo = ({ beers }) => {
 		
 			<Row className="main__container ">
 
-				<Col className="main__image-container" md={12}>
+				<Col xs={12} md={4} className="main__image-container" >
 					{
 						beers.image_url !== null
 							?
@@ -26,19 +26,20 @@ export const MainInfo = ({ beers }) => {
 							<img  
 							src="https://freesvg.org/img/jimmiet_A_nice_cold_one.png"
 							alt="No_image"
+							className="main__image "
 							/>
 
 					}
 				</Col>
 
-				<Col  md={12} className=" main__desc">
+				<Col  xs={12} md={4} className=" main__desc">
 
-					<h1 className="main__title">{beers.name}</h1>
+					<p className="main__title"><i>{beers.name}</i></p>
 					<p classname="main__text">{beers.description}</p>
 
 				</Col >
 
-				<Col  md={12} className="main__misc">
+				<Col  xs={12} md={4} className="main__misc">
 
 				<div className=" main__tagline">
 					<p><i>"{beers.tagline}"</i></p>

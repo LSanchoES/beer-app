@@ -45,12 +45,12 @@ export const IngredientsInfo = ({ ingredients }) => {
 			<Row className="ingredients__container">
 
 
-				<Col className="ingredients__misc">
+				<Col xs={12} md={4} className="ingredients__misc">
 					<h1 className="ingredients__title">Yeast</h1>
 					<p className="ingredients__list"><i>"{ingredients.yeast}"</i></p>
 				</Col>	
 
-				<Col  className="ingredients__misc">
+				<Col  xs={12} md={4} className="ingredients__misc">
 					<h1 className="ingredients__title">Hops</h1>
 							
 						{
@@ -70,7 +70,7 @@ export const IngredientsInfo = ({ ingredients }) => {
 						
 				</Col>
 						
-				<Col  className="ingredients__misc">
+				<Col xs={12} md={4} className="ingredients__misc">
 					<h1 className="ingredients__title">Malt</h1>
 				
 					{

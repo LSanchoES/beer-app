@@ -4,6 +4,11 @@
     justify-content: center;
     height: 100vh;
     background-color: $secondary;
+    background-image: url('https://res.cloudinary.com/lsancho-es/image/upload/v1620078467/wjy631irx6pwm8hkb3c5.png');
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position: right bottom;
+
     box-shadow: 0px 3px 20px  $secondary;
     color: $white;
     overflow: hidden;
@@ -14,42 +19,24 @@
 
 .food__desc{
     display: flex;  
-    justify-content: start;
-    align-items: flex-start;
-    width: 33%;
+    width: 50%;
     height: 70vh;
     padding: 2rem;
     margin-bottom: 1rem;
     
-
 }
 .food__title{
     
     font-size: 5rem;
-    text-align: center;
-    padding: 5rem;
+    text-align: right;
+    padding: 1rem;
 }
 
-.food__image-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    width: 33%;
-    -webkit-filter: drop-shadow(5px 5px 20px $dark-grey);
-    filter:         drop-shadow(5px 5px 20px $dark-grey); 
-    overflow-y: hidden;
 
-   
-}
-.food__image{
-    display: flex;
-    justify-self: left;
-}
 
 .food__misc{
     
-    width: 33%;
+    width: 50%;
     text-align: center;
     height: 70vh;
     overflow: hidden;
@@ -66,3 +53,28 @@
     }
 }
 
+@media (max-width:768px) {
+    .food__container{
+
+        height: 100%;
+        padding: 1rem;
+        background-position: left bottom;
+    }
+    .food__title{
+    
+        font-size:4rem;
+        
+    }
+    .food__desc{
+
+        margin-bottom: -17rem;
+        padding: 0rem;
+        
+    }
+    .food__list{
+        margin-top: 0rem;
+        font-size: 2rem;
+    
+        
+    }
+}

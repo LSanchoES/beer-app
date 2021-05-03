@@ -7,7 +7,7 @@ export const FoodPairingInfo = ({ beers }) => {
 		<>
 			<Row className="food__container">
 
-				<Col className="food__misc">
+				<Col xs={{span:12 , order:2}} md={{span:4 , order:1}} className="food__misc">
 					<div>
 						{beers.food_pairing
 							? beers.food_pairing.map((items) =>
@@ -21,15 +21,10 @@ export const FoodPairingInfo = ({ beers }) => {
 							: "Coming soon..."}
 					</div>
 				</Col>
-				<Col className="food__desc">
+				<Col  xs={{span:12 , order:1}} md={{span:4 , order:2}}  md={4} className="food__desc">
 					<h1 className="food__title">Food Pairing</h1>
 				</Col>
-				<Col className="food__image-container">
-					<img
-						src="https://res.cloudinary.com/lsancho-es/image/upload/v1619875144/opd2rsglg8zjzrlqbxng.png"
-						className="food__image"
-					/>
-				</Col>
+
 
 			</Row>
 		</>

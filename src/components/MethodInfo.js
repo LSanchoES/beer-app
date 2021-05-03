@@ -48,7 +48,7 @@ export const MethodInfo = ({method}) => {
 			
 			<Row className="method__container">
 
-				<Col className="method__misc">
+				<Col  className="method__misc">
 
 					<h1 className="method__title">Fermentation</h1>
 				

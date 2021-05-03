@@ -83,7 +83,7 @@ export const RandomBeer = () => {
 	return (
 		<>	
 			
-			<Container className="animate__animated animate__fadeIn">
+			<div className="animate__animated animate__fadeIn">
 			<Head />
 
 			<div 
@@ -105,7 +105,7 @@ export const RandomBeer = () => {
 
 			<Foot />	
 			
-			</Container>
+			</div>
 		</>
 	);
 };

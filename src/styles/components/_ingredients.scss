@@ -35,13 +35,46 @@
 }
 .ingredients__list{
     margin-top: 1rem;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     z-index: 2;
+    
     &:nth-child(2){
         margin-top: 4rem;
     }
     &:nth-child(3){
         margin-top: 4rem;
     }
+}
+
+@media (max-width:768px){
+
+    .ingredients__container{
+
+        height: 100%;
+
+        background-size: 40%;
+        background-position: right bottom;
+        
+        padding: 2rem;
+
+    }
+    .ingredients__misc{
+    
+        height: 100%;
+
+    }
+    .ingredients__list{
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        z-index: 2;
+        
+        &:nth-child(2){
+            margin-top: 1rem;
+        }
+        &:nth-child(3){
+            margin-top: 2rem;
+        }
+    }
+
 }
 
